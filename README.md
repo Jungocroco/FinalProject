@@ -1,6 +1,8 @@
 # FinalProject
 Timo den Hartog
+
 8-1-18
+
 Record Store Explore
 
 1. Problem statement.
