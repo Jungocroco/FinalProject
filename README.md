@@ -29,7 +29,7 @@ Prerequisites.
 Data sources:
 - Google Maps API, https://developers.google.com/maps/
 - Yelp, https://www.yelp.nl/developers/documentation/v3/business_search
- - Data may have to be transformed before usable
+  - Data may have to be transformed before usable
 - Discogs, https://www.discogs.com/developers/#page:marketplace
   - Data may have to be transformed before usable
   
