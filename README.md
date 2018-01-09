@@ -32,11 +32,6 @@ Data sources:
   - Data may have to be transformed before usable
 - Discogs, https://www.discogs.com/developers/#page:marketplace
   - Data may have to be transformed before usable
-  
-External components:
-- Firebase Authentication & Database
-  - https://firebase.google.com/products/auth/
-  - https://firebase.google.com/products/realtime-database/
 
 Review of similar mobile apps:
 There is no specifically similar app to what i propose. The Marketplace section of the Discogs app links to a browser and is thereby not implemented in the app itself. The Yelp app only shows reviews and locations, no assortment or goods to be bought.
