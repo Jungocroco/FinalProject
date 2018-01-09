@@ -16,7 +16,7 @@ For the lack of an app that combines record store locations and assortment, this
 
 Solution.
 
-The goal is to create a all-in-one record store finder.
+The goal is to create an all-in-one record store finder.
 Main features:
 - Map with record stores shown
 - Yelp Guide with the default settings of record stores
