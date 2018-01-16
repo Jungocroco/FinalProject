@@ -27,11 +27,13 @@ Main features:
 Prerequisites.
 
 Data sources:
-- Google Maps API, https://developers.google.com/maps/
 - Yelp, https://www.yelp.nl/developers/documentation/v3/business_search
   - Data may have to be transformed before usable
 - Discogs, https://www.discogs.com/developers/#page:marketplace
   - Data may have to be transformed before usable
+  
+ Frameworks:
+ - IOS MapKit
 
 Review of similar mobile apps:
 There is no specifically similar app to what i propose. The Marketplace section of the Discogs app links to a browser and is thereby not implemented in the app itself. The Yelp app only shows reviews and locations, no assortment or goods to be bought.
