@@ -8,6 +8,34 @@
 import UIKit
 
 class AssortmentViewController: UITableViewController {
+    
+    var sellerName = String()
+    
+    func fetchArticles(completion: @escaping ([Assortment]?) -> Void) {
+        // URL waar request gedaan wordt
+        let basePath = URL(string: "https://api.discogs.com/users/\(sellerName)/inventory")!
+        
+        // Querie opdracht
+        let query: [String: String] = [
+            "appKey": "GAyGneCPWHqdzoKagxRy",
+            "appSecret": "XxBFtLoFDaqCjCNcZAJhfrzviMngVeYl",
+            ]
+        
+        let queryURL = basePath.withQueries(query)!
+        
+        let task = URLSession.shared.dataTask(with: queryURL) {
+            (data, response, error) in
+            let jsonDeconder = JSONDecoder()
+            if let data = data,
+                let records = try? jsonDeconder.decode(RecordsArray.self, from: data) {
+                completion(records.recordsArray)
+            }
+            else {
+                completion(nil)
+            }
+        }
+        task.resume()
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +49,7 @@ class AssortmentViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {

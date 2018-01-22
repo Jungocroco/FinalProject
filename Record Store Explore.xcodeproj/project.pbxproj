@@ -13,6 +13,7 @@
 		2D0969AF200E1CF000099179 /* AssortmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0969AE200E1CF000099179 /* AssortmentViewController.swift */; };
 		2D0969B1200E1D7A00099179 /* AssortmentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0969B0200E1D7A00099179 /* AssortmentCell.swift */; };
 		2D0969B3200F908700099179 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0969B2200F908700099179 /* SearchViewController.swift */; };
+		2D0969B7201602F800099179 /* Assortment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0969B6201602F800099179 /* Assortment.swift */; };
 		2D3168F720078BCD007B00AA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3168F620078BCD007B00AA /* AppDelegate.swift */; };
 		2D3168F920078BCD007B00AA /* StoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3168F820078BCD007B00AA /* StoreViewController.swift */; };
 		2D3168FC20078BCD007B00AA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D3168FA20078BCD007B00AA /* Main.storyboard */; };
@@ -30,6 +31,7 @@
 		2D0969AE200E1CF000099179 /* AssortmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AssortmentViewController.swift; path = "/Users/TimoFrans/Desktop/UVA Media en Cultuur/2017-2018/Minor Programming/Xcodes/Record Store Explore/Record Store Explore/View Controllers/AssortmentViewController.swift"; sourceTree = "<absolute>"; };
 		2D0969B0200E1D7A00099179 /* AssortmentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssortmentCell.swift; sourceTree = "<group>"; };
 		2D0969B2200F908700099179 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		2D0969B6201602F800099179 /* Assortment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assortment.swift; sourceTree = "<group>"; };
 		2D3168F320078BCD007B00AA /* Record Store Explore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Record Store Explore.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D3168F620078BCD007B00AA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2D3168F820078BCD007B00AA /* StoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreViewController.swift; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 		2D31690B200798E8007B00AA /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				2D0969B6201602F800099179 /* Assortment.swift */,
 				2D31690820079801007B00AA /* Stores.swift */,
 			);
 			path = Models;
@@ -287,6 +290,7 @@
 				2D0969AF200E1CF000099179 /* AssortmentViewController.swift in Sources */,
 				2D0969A8200E022400099179 /* MapViewController.swift in Sources */,
 				2D316913200CC499007B00AA /* BusinessCell.swift in Sources */,
+				2D0969B7201602F800099179 /* Assortment.swift in Sources */,
 				2D0969B1200E1D7A00099179 /* AssortmentCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
