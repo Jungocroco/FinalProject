@@ -160,7 +160,7 @@
         <!--Assortment View Controller-->
         <scene sceneID="4EC-8a-6lx">
             <objects>
-                <tableViewController title="Assortment View Controller" id="w9O-0I-6Tf" sceneMemberID="viewController">
+                <tableViewController title="Assortment View Controller" id="w9O-0I-6Tf" customClass="AssortmentViewController" customModule="Record_Store_Explore" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="1xc-Nf-Mj4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -281,6 +281,9 @@
                                         <rect key="frame" x="70" y="286" width="235" height="30"/>
                                         <fontDescription key="fontDescription" name="BodoniSvtyTwoOSITCTT-Book" family="Bodoni 72 Oldstyle" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                                        <connections>
+                                            <action selector="SearchFieldPrimaryActionTriggered:" destination="ahH-7b-Rsh" eventType="primaryActionTriggered" id="mgb-0A-alE"/>
+                                        </connections>
                                     </textField>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

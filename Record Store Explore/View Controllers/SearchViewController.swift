@@ -10,21 +10,22 @@ import UIKit
 
 class SearchViewController: UIViewController {
 
+    let storeSegueIdentifier = "ShowStoresSegue"
+    
     @IBOutlet weak var searchInput: UITextField!
+    @IBAction func SearchFieldPrimaryActionTriggered(_ sender: Any) {
+        performSegue(withIdentifier: storeSegueIdentifier, sender: Any?.self)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
-    let storeSegueIdentifier = "ShowStoresSegue"
-
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if  segue.identifier == storeSegueIdentifier,
             let destination = segue.destination as? StoreViewController {

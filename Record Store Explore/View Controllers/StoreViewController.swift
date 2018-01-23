@@ -40,11 +40,13 @@ class StoreViewController: UIViewController, UITableViewDataSource, UITableViewD
         let query = YLPQuery(location: searchQuery)
         query.term = "vinyl records"
         
-        let yelpAPIClient = YLPClient.authorize(withAppId: appId, secret: appSecret) { (client, error) in
+        YLPClient.authorize(withAppId: appId, secret: appSecret) { (client, error) in
             client!.search(with: query, completionHandler: {(search, error)
                 in
                 self.businesses = search!.businesses
-                self.tableView.reloadData()
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
                 for business in search!.businesses{
                     print(business.name)
                     print(business.location.address.first!)
@@ -54,7 +56,6 @@ class StoreViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -84,6 +85,7 @@ class StoreViewController: UIViewController, UITableViewDataSource, UITableViewD
             destination.storeLongitude = (businesses[storeIndex].location.coordinate?.longitude)!
             destination.storeName = (businesses[storeIndex].name)
             destination.storeAddress = (businesses[storeIndex].location.address.first)!
+            destination.storeArray = businesses
         }
     }
     

@@ -2,7 +2,7 @@
 import UIKit
 
 struct Assortment: Codable {
-    var image: UIImage
+    var image: String
     var title: String
     var artist: String
     var label: String

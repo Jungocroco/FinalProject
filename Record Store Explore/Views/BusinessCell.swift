@@ -47,8 +47,9 @@ class BusinessCell: UITableViewCell {
                             let image = UIImage(data: imageData)
                             
                             //displaying the image
+                            DispatchQueue.main.async {
                             self.thumbImageView.image = image
-                            
+                            }
                         } else {
                             print("Image file is corrupted")
                         }
