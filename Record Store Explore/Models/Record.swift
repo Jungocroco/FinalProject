@@ -1,7 +1,7 @@
 
 import UIKit
 
-struct Assortment: Codable {
+struct Record: Codable {
     var image: String
     var title: String
     var artist: String
