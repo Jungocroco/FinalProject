@@ -62,7 +62,6 @@ class BusinessCell: UITableViewCell {
             //starting the download task
             getImageFromUrl.resume()
             
-            
             ratingLabel.text = "\(String(business.rating)) Stars"
             nameLabel.text = business.name
             reviewsCountLabel.text = "\(business.reviewCount) Reviews"

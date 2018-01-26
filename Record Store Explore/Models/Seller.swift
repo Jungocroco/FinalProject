@@ -6,4 +6,15 @@
 //  Copyright © 2018 Timo den Hartog. All rights reserved.
 //
 
-import Foundation
+struct Seller: Codable {
+    var username: [String]
+    
+    enum CodingKeys: String, CodingKey {
+        case username
+    }
+}
+
+//struct SellerArray: Codable {
+//    var
+//}
+

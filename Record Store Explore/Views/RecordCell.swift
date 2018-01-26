@@ -8,43 +8,44 @@
 
 import UIKit
 
-class AssortmentCell: UITableViewCell {
+class RecordCell: UITableViewCell {
 
     @IBOutlet weak var thumbImageView: UIImageView!
     
-    @IBOutlet weak var ratingLabel: UILabel!
+    @IBOutlet weak var titleLabel: UILabel!
     
-    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var artistLabel: UILabel!
     
-    @IBOutlet weak var reviewsCountLabel: UILabel!
+    @IBOutlet weak var labelLabel: UILabel!
     
-    @IBOutlet weak var adressLabel: UILabel!
+    @IBOutlet weak var priceLabel: UILabel!
     
-    var record: Record {
+    @IBOutlet weak var stateLabel: UILabel!
+
+    var record: Listing! {
         didSet {
             
             // Image retrieval (for lack of "setImageWithURL")
-            
-            let session = URLSession(configuration: .default)
-            let URL_IMAGE = business.imageURL
+
+            let recordImage = URL(string: record.release.thumbnail)!
             //creating a dataTask
-            let getImageFromUrl = session.dataTask(with: (URL_IMAGE)!) { (data, response, error) in
-                
+            let getImageFromUrl = URLSession.shared.dataTask(with: recordImage) { (data, response, error) in
+
                 //if there is any error
                 if let e = error {
                     //displaying the message
                     print("Error Occurred: \(e)")
-                    
+
                 } else {
                     //in case of now error, checking wheather the response is nil or not
                     if (response as? HTTPURLResponse) != nil {
-                        
+
                         //checking if the response contains an image
                         if let imageData = data {
-                            
+
                             //getting the image
                             let image = UIImage(data: imageData)
-                            
+
                             //displaying the image
                             DispatchQueue.main.async {
                                 self.thumbImageView.image = image
@@ -57,22 +58,32 @@ class AssortmentCell: UITableViewCell {
                     }
                 }
             }
-            
+
             //starting the download task
             getImageFromUrl.resume()
-            
-            
-            ratingLabel.text = "\(String(business.rating)) Stars"
-            nameLabel.text = business.name
-            reviewsCountLabel.text = "\(business.reviewCount) Reviews"
-            adressLabel.text = business.location.address.first
-            _ = business.location.coordinate
+
+            titleLabel.text = record.release.title
+            artistLabel.text = record.release.artist
+            labelLabel.text = record.release.catalog_number
+            priceLabel.text = String(record.price.value)
+            stateLabel.text = record.condition
+
         }
     }
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        thumbImageView.layer.cornerRadius = 6
+        thumbImageView.clipsToBounds = true
+        
+        titleLabel.preferredMaxLayoutWidth = titleLabel.frame.size.width
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        titleLabel.preferredMaxLayoutWidth = titleLabel.frame.size.width
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

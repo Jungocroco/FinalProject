@@ -41,7 +41,7 @@ class StoreViewController: UIViewController, UITableViewDataSource, UITableViewD
         query.term = "vinyl records"
         
         YLPClient.authorize(withAppId: appId, secret: appSecret) { (client, error) in
-            client!.search(with: query, completionHandler: {(search, error)
+            client?.search(with: query, completionHandler: {(search, error)
                 in
                 self.businesses = search!.businesses
                 DispatchQueue.main.async {
@@ -73,7 +73,7 @@ class StoreViewController: UIViewController, UITableViewDataSource, UITableViewD
         
         return cell
     }
-
+    
     let mapSegueIdentifier = "ShowMapsSegue"
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -84,8 +84,10 @@ class StoreViewController: UIViewController, UITableViewDataSource, UITableViewD
             destination.storeLatitude = (businesses[storeIndex].location.coordinate?.latitude)!
             destination.storeLongitude = (businesses[storeIndex].location.coordinate?.longitude)!
             destination.storeName = (businesses[storeIndex].name)
+            destination.storeCity = (businesses[storeIndex].location.city)
             destination.storeAddress = (businesses[storeIndex].location.address.first)!
             destination.storeArray = businesses
+            destination.storeSite = String(describing: businesses[storeIndex].url)
         }
     }
     

@@ -1,26 +1,35 @@
 
 import UIKit
 
-struct Record: Codable {
-    var image: String
-    var title: String
-    var artist: String
-    var label: String
-    var price: String
-    var state: String
-
+struct Listing: Codable {
+    var release: Release
+    var condition: String
+    var status: String
+    var price: Price
 
     enum CodingKeys: String, CodingKey {
-        case image
-        case title
-        case artist
-        case label
+        case release
         case price
-        case state
+        case condition
+        case status
     }
 }
 
 struct RecordsArray: Codable {
-    let recordsArray: [Assortment]
+    let listings: [Listing]
 }
+
+struct Price: Codable {
+    let value: Double
+}
+
+struct Release: Codable {
+    let thumbnail: String
+    let artist: String
+    let title: String
+    let year: Int
+    let catalog_number: String
+}
+
+
 
