@@ -41,4 +41,6 @@ There is no specifically similar app to what i propose. The Marketplace section 
 Hardest part identification:
 The combination of these different API's into one map-centered application looks like the biggest struggle to overcome. Also, retrieving Discogs' data and presenting it in a user-friendly way can become a difficulty.
 
+[![BCH compliance](https://bettercodehub.com/edge/badge/Jungocroco/FinalProject?branch=master)](https://bettercodehub.com/)
+
 ![Alt text](https://raw.githubusercontent.com/Jungocroco/FinalProject/master/doc/RecordStoreExplore.jpg)
