@@ -9,17 +9,16 @@
 /* Begin PBXBuildFile section */
 		1A394F7F158949A5DBED1561 /* Pods_Record_Store_Explore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2E977886DF36CFFD8752D7C /* Pods_Record_Store_Explore.framework */; };
 		2D0969A6200D684400099179 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D0969A5200D684400099179 /* MapKit.framework */; };
-		2D0969A8200E022400099179 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0969A7200E022400099179 /* MapViewController.swift */; };
-		2D0969AF200E1CF000099179 /* AssortmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0969AE200E1CF000099179 /* AssortmentViewController.swift */; };
-		2D0969B1200E1D7A00099179 /* AssortmentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0969B0200E1D7A00099179 /* AssortmentCell.swift */; };
 		2D0969B3200F908700099179 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0969B2200F908700099179 /* SearchViewController.swift */; };
-		2D0969B7201602F800099179 /* Assortment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0969B6201602F800099179 /* Assortment.swift */; };
 		2D3168F720078BCD007B00AA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3168F620078BCD007B00AA /* AppDelegate.swift */; };
 		2D3168F920078BCD007B00AA /* StoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3168F820078BCD007B00AA /* StoreViewController.swift */; };
 		2D3168FC20078BCD007B00AA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D3168FA20078BCD007B00AA /* Main.storyboard */; };
 		2D3168FE20078BCD007B00AA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D3168FD20078BCD007B00AA /* Assets.xcassets */; };
 		2D31690120078BCD007B00AA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D3168FF20078BCD007B00AA /* LaunchScreen.storyboard */; };
 		2D316913200CC499007B00AA /* BusinessCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D316912200CC499007B00AA /* BusinessCell.swift */; };
+		2D8D1ADE2021EA04006D6168 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D8D1ADD2021EA04006D6168 /* MapViewController.swift */; };
+		2D8D1AE02021EA3B006D6168 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D8D1ADF2021EA3B006D6168 /* WebViewController.swift */; };
+		2D8D1AE22021EB08006D6168 /* Storepin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D8D1AE12021EB08006D6168 /* Storepin.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,11 +26,7 @@
 		2D0969A1200CE83600099179 /* YelpAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YelpAPI.swift; sourceTree = "<group>"; };
 		2D0969A2200CE83600099179 /* YLPClient+Futures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "YLPClient+Futures.swift"; sourceTree = "<group>"; };
 		2D0969A5200D684400099179 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
-		2D0969A7200E022400099179 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapViewController.swift; path = "../../../../Final Project/Tricks-in-Swift-Xcode-Version-7.3.1-master/MapViewController.swift"; sourceTree = "<group>"; };
-		2D0969AE200E1CF000099179 /* AssortmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AssortmentViewController.swift; path = "/Users/TimoFrans/Desktop/UVA Media en Cultuur/2017-2018/Minor Programming/Xcodes/Record Store Explore/Record Store Explore/View Controllers/AssortmentViewController.swift"; sourceTree = "<absolute>"; };
-		2D0969B0200E1D7A00099179 /* AssortmentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssortmentCell.swift; sourceTree = "<group>"; };
 		2D0969B2200F908700099179 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
-		2D0969B6201602F800099179 /* Assortment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assortment.swift; sourceTree = "<group>"; };
 		2D3168F320078BCD007B00AA /* Record Store Explore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Record Store Explore.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D3168F620078BCD007B00AA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2D3168F820078BCD007B00AA /* StoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreViewController.swift; sourceTree = "<group>"; };
@@ -41,6 +36,9 @@
 		2D31690220078BCD007B00AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2D31690820079801007B00AA /* Stores.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stores.swift; sourceTree = "<group>"; };
 		2D316912200CC499007B00AA /* BusinessCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessCell.swift; sourceTree = "<group>"; };
+		2D8D1ADD2021EA04006D6168 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		2D8D1ADF2021EA3B006D6168 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		2D8D1AE12021EB08006D6168 /* Storepin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storepin.swift; sourceTree = "<group>"; };
 		9DD3D3DAA00405DDFCDC74C5 /* Pods-Record Store Explore.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Record Store Explore.release.xcconfig"; path = "Pods/Target Support Files/Pods-Record Store Explore/Pods-Record Store Explore.release.xcconfig"; sourceTree = "<group>"; };
 		C2E977886DF36CFFD8752D7C /* Pods_Record_Store_Explore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Record_Store_Explore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -112,7 +110,7 @@
 		2D31690B200798E8007B00AA /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				2D0969B6201602F800099179 /* Assortment.swift */,
+				2D8D1AE12021EB08006D6168 /* Storepin.swift */,
 				2D31690820079801007B00AA /* Stores.swift */,
 			);
 			path = Models;
@@ -123,8 +121,8 @@
 			children = (
 				2D0969B2200F908700099179 /* SearchViewController.swift */,
 				2D3168F820078BCD007B00AA /* StoreViewController.swift */,
-				2D0969A7200E022400099179 /* MapViewController.swift */,
-				2D0969AE200E1CF000099179 /* AssortmentViewController.swift */,
+				2D8D1ADD2021EA04006D6168 /* MapViewController.swift */,
+				2D8D1ADF2021EA3B006D6168 /* WebViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -133,7 +131,6 @@
 			isa = PBXGroup;
 			children = (
 				2D316912200CC499007B00AA /* BusinessCell.swift */,
-				2D0969B0200E1D7A00099179 /* AssortmentCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -285,13 +282,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				2D3168F920078BCD007B00AA /* StoreViewController.swift in Sources */,
+				2D8D1AE02021EA3B006D6168 /* WebViewController.swift in Sources */,
 				2D0969B3200F908700099179 /* SearchViewController.swift in Sources */,
 				2D3168F720078BCD007B00AA /* AppDelegate.swift in Sources */,
-				2D0969AF200E1CF000099179 /* AssortmentViewController.swift in Sources */,
-				2D0969A8200E022400099179 /* MapViewController.swift in Sources */,
 				2D316913200CC499007B00AA /* BusinessCell.swift in Sources */,
-				2D0969B7201602F800099179 /* Assortment.swift in Sources */,
-				2D0969B1200E1D7A00099179 /* AssortmentCell.swift in Sources */,
+				2D8D1ADE2021EA04006D6168 /* MapViewController.swift in Sources */,
+				2D8D1AE22021EB08006D6168 /* Storepin.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

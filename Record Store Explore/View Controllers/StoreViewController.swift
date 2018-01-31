@@ -36,7 +36,6 @@ class StoreViewController: UIViewController, UITableViewDataSource, UITableViewD
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 140
 
-        // Search for 3 dinner restaurants
         let query = YLPQuery(location: searchQuery)
         query.term = "vinyl records"
         

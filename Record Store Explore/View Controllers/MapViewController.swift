@@ -30,15 +30,10 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, UITextFiel
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        // Print for test
-//        print(storeLatitude)
-//        print(storeLongitude)
-//        print(storeName)
-//        print(storeAddress)
-        
         // appends specific storedetails to array
         for i in 0...(storeArray.count-1) {
-            pinArray.append(StorePin(title: storeArray[i].name, city: storeArray[i].location.city, address: storeArray[i].location.address.first!, coordinate: CLLocationCoordinate2DMake((storeArray[i].location.coordinate?.latitude)!, (storeArray[i].location.coordinate?.longitude)!), url: storeArray[i].url))
+//            pinArray.append(StorePin(title: storeArray[i].name, city: storeArray[i].location.city, address: storeArray[i].location.address.first!, coordinate: CLLocationCoordinate2DMake((storeArray[i].location.coordinate?.latitude)!, (storeArray[i].location.coordinate?.longitude)!), url: storeArray[i].url))
+            pinArray.append(StorePin(business: storeArray[i]))
             // adds pins to mapview
             map.addAnnotation(pinArray[i])
         }
@@ -147,16 +142,14 @@ extension MapViewController: MKMapViewDelegate {
                  calloutAccessoryControlTapped control: UIControl) {
         
         let pin = view.annotation as! StorePin
-        
-        // IMPLEMENT UISiteView
-        
+                
         if control.tag == 2 {
             let location = view.annotation as! StorePin
             let launchOptions = [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving]
             location.mapItem().openInMaps(launchOptions: launchOptions)
         // To first Google result or Yelp
         } else if control.tag == 1 {
-            if let url = URL(string: "https://www.google.nl/search?q=\(pin.title!)+\(pin.city!)&btnI=1") {
+            if let url = URL(string: "https://www.google.nl/search?q=\(pin.title!)+\(pin.city)&btnI=1") {
                 self.webViewUrl = url
                 performSegue(withIdentifier: "showWebSegue", sender: self)
 //                UIApplication.shared.open(url, options: [:], completionHandler: nil)

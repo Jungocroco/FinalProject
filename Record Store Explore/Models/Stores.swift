@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import yelp
 
-class Store: NSObject {
+class Store:  {
     let name: String?
     let adress: String?
     let imageURL: NSURL?
