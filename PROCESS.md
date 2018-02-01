@@ -18,7 +18,7 @@
 ## day 4:  Rewrote concept of the app. Created annotations per store to be used in the map.
 ## day 5: Did most of the callout accessory work, which was way more effort than expected. In the end the map worked how it should
 
-![Alt text](https://raw.githubusercontent.com/Jungocroco/FinalProject/master/doc/PinTutScreen.png
+![Alt text](https://raw.githubusercontent.com/Jungocroco/FinalProject/master/doc/PinTutScreen.png)
 
 # week 4
 ## day 1: Created an error alert for the search. Implemented a default image for when retrieval fails. Added an OpenUrl and OpenMaps function within the callout.
