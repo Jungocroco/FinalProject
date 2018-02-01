@@ -11,6 +11,7 @@ import WebKit
 
 class WebViewController: UIViewController {
 
+    // outlet & var for implemented Webview
     @IBOutlet weak var webView: WKWebView!
     var url: URL?
     

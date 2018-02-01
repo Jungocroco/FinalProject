@@ -20,10 +20,11 @@ extension URL {
 
 class StoreViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
+    // lets & vars
     let appId = "wntKe-kJiSPMD5eHU1WJWw"
     let appSecret = "9vzzzClQliLIZofh1q2o2SlsMt4wRWSIdutGlGkq4OgvxXjeTTgpMK3im1HW8pSj"
+    let mapSegueIdentifier = "ShowMapsSegue"
     var searchQuery = ""
-    
     var businesses: [YLPBusiness]!
 
     @IBOutlet weak var tableView: UITableView!
@@ -31,6 +32,7 @@ class StoreViewController: UIViewController, UITableViewDataSource, UITableViewD
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // tableview configuration
         tableView.delegate = self
         tableView.dataSource = self
         tableView.rowHeight = UITableViewAutomaticDimension
@@ -39,16 +41,21 @@ class StoreViewController: UIViewController, UITableViewDataSource, UITableViewD
         let query = YLPQuery(location: searchQuery)
         query.term = "vinyl records"
         
+        // Yelp API Authorization & Search
         YLPClient.authorize(withAppId: appId, secret: appSecret) { (client, error) in
             client?.search(with: query, completionHandler: {(search, error)
                 in
-                self.businesses = search!.businesses
+                if search != nil {
+                    self.businesses = search?.businesses
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
                 }
-                for business in search!.businesses{
-                    print(business.name)
-                    print(business.location.address.first!)
+                } else if search == nil {
+                    // Alert pop-up initialization
+                    let alertController = UIAlertController(title: "There's a slight problem", message:
+                        "No stores to show..", preferredStyle: UIAlertControllerStyle.alert)
+                    alertController.addAction(UIAlertAction(title: "Accept", style: UIAlertActionStyle.default,handler: nil))
+                    self.present(alertController, animated: true, completion: nil)
                 }
             })}
     }
@@ -57,6 +64,7 @@ class StoreViewController: UIViewController, UITableViewDataSource, UITableViewD
         super.didReceiveMemoryWarning()
     }
     
+    // row configuration
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if businesses != nil {
             return businesses.count
@@ -65,6 +73,7 @@ class StoreViewController: UIViewController, UITableViewDataSource, UITableViewD
         }
     }
     
+    // cell configuration
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "BusinessCell", for: indexPath) as! BusinessCell
         
@@ -73,8 +82,7 @@ class StoreViewController: UIViewController, UITableViewDataSource, UITableViewD
         return cell
     }
     
-    let mapSegueIdentifier = "ShowMapsSegue"
-    
+    // segue information
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if  segue.identifier == mapSegueIdentifier,
             let destination = segue.destination as? MapViewController,
@@ -82,9 +90,6 @@ class StoreViewController: UIViewController, UITableViewDataSource, UITableViewD
         {
             destination.storeLatitude = (businesses[storeIndex].location.coordinate?.latitude)!
             destination.storeLongitude = (businesses[storeIndex].location.coordinate?.longitude)!
-            destination.storeName = (businesses[storeIndex].name)
-            destination.storeCity = (businesses[storeIndex].location.city)
-            destination.storeAddress = (businesses[storeIndex].location.address.first)!
             destination.storeArray = businesses
             destination.storeSite = String(describing: businesses[storeIndex].url)
         }

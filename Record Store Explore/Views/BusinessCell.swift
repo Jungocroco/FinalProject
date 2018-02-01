@@ -12,41 +12,38 @@ import YelpAPI
 class BusinessCell: UITableViewCell {
 
     @IBOutlet weak var thumbImageView: UIImageView!
-    
     @IBOutlet weak var ratingLabel: UILabel!
-    
     @IBOutlet weak var nameLabel: UILabel!
-    
     @IBOutlet weak var reviewsCountLabel: UILabel!
-    
     @IBOutlet weak var adressLabel: UILabel!
         
     var business: YLPBusiness! {
         didSet {
             
-            // Image retrieval (for lack of "setImageWithURL")
+            // image retrieval
             
             let session = URLSession(configuration: .default)
             let URL_IMAGE = business.imageURL
-            //creating a dataTask
-            let getImageFromUrl = session.dataTask(with: (URL_IMAGE)!) { (data, response, error) in
+            // creating a dataTask
+            if let URL_IMAGE = URL_IMAGE {
+                let getImageFromUrl = session.dataTask(with: (URL_IMAGE)) { (data, response, error) in
                 
-                //if there is any error
+                // if there is any error
                 if let e = error {
                     //displaying the message
                     print("Error Occurred: \(e)")
                     
                 } else {
-                    //in case of now error, checking wheather the response is nil or not
+                    // in case of now error, checking wheather the response is nil or not
                     if (response as? HTTPURLResponse) != nil {
                         
-                        //checking if the response contains an image
+                        // checking if the response contains an image
                         if let imageData = data {
                             
-                            //getting the image
+                            // getting the image
                             let image = UIImage(data: imageData)
                             
-                            //displaying the image
+                            // displaying the image
                             DispatchQueue.main.async {
                             self.thumbImageView.image = image
                             }
@@ -58,8 +55,7 @@ class BusinessCell: UITableViewCell {
                     }
                 }
             }
-            
-            //starting the download task
+            // starting the download task
             getImageFromUrl.resume()
             
             ratingLabel.text = "\(String(business.rating)) Stars"
@@ -67,13 +63,22 @@ class BusinessCell: UITableViewCell {
             reviewsCountLabel.text = "\(business.reviewCount) Reviews"
             adressLabel.text = business.location.address.first
             _ = business.location.coordinate
+            } else {
+                DispatchQueue.main.async {
+                self.thumbImageView.image = UIImage(named: "NoPicAvailable")
+                }
+                ratingLabel.text = "\(String(business.rating)) Stars"
+                nameLabel.text = business.name
+                reviewsCountLabel.text = "\(business.reviewCount) Reviews"
+                adressLabel.text = business.location.address.first
+                _ = business.location.coordinate
+            }
         }
     }
     
-    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        // image layout initialization code
         thumbImageView.layer.cornerRadius = 6
         thumbImageView.clipsToBounds = true
         
@@ -88,8 +93,6 @@ class BusinessCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
 
 }

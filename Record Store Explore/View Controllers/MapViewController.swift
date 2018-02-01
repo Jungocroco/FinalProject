@@ -13,9 +13,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, UITextFiel
     // vars & lets
     var storeLatitude = Double()
     var storeLongitude = Double()
-    var storeName = String()
-    var storeCity = String()
-    var storeAddress = String()
     var pin: StorePin?
     var storeArray = [YLPBusiness]()
     var pinArray = [MKAnnotation]()
@@ -32,8 +29,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, UITextFiel
         
         // appends specific storedetails to array
         for i in 0...(storeArray.count-1) {
-//            pinArray.append(StorePin(title: storeArray[i].name, city: storeArray[i].location.city, address: storeArray[i].location.address.first!, coordinate: CLLocationCoordinate2DMake((storeArray[i].location.coordinate?.latitude)!, (storeArray[i].location.coordinate?.longitude)!), url: storeArray[i].url))
             pinArray.append(StorePin(business: storeArray[i]))
+            
             // adds pins to mapview
             map.addAnnotation(pinArray[i])
         }
@@ -76,7 +73,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, UITextFiel
         button.translatesAutoresizingMaskIntoConstraints = false
         map.addSubview(button)
         
-        // Not working? DELETE
         let scale = MKScaleView(mapView: map)
         scale.legendAlignment = .trailing
         scale.translatesAutoresizingMaskIntoConstraints = false
@@ -120,12 +116,14 @@ extension MapViewController: MKMapViewDelegate {
             view.canShowCallout = true
             view.calloutOffset = CGPoint(x: -5, y: 5)
             
+            // configure left callout accessory
             let leftItemTag = 1
             let leftLinkButton = UIButton(frame: CGRect(origin: CGPoint.zero, size: CGSize(width: 30, height: 30)))
             leftLinkButton.setBackgroundImage(UIImage(named: "assortment"), for: UIControlState())
             leftLinkButton.tag = leftItemTag
             view.leftCalloutAccessoryView = leftLinkButton
             
+            // configure right callout accessory
             let rightItemTag = 2
             let rightMapsButton = UIButton(frame: CGRect(origin: CGPoint.zero, size: CGSize(width: 30, height: 30)))
             rightMapsButton.setBackgroundImage(UIImage(named: "Maps-icon"), for: UIControlState())
@@ -142,22 +140,21 @@ extension MapViewController: MKMapViewDelegate {
                  calloutAccessoryControlTapped control: UIControl) {
         
         let pin = view.annotation as! StorePin
-                
-        if control.tag == 2 {
-            let location = view.annotation as! StorePin
-            let launchOptions = [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving]
-            location.mapItem().openInMaps(launchOptions: launchOptions)
-        // To first Google result or Yelp
-        } else if control.tag == 1 {
+        
+        // direct to first Google result or Yelp
+        if control.tag == 1 {
             if let url = URL(string: "https://www.google.nl/search?q=\(pin.title!)+\(pin.city)&btnI=1") {
                 self.webViewUrl = url
                 performSegue(withIdentifier: "showWebSegue", sender: self)
-//                UIApplication.shared.open(url, options: [:], completionHandler: nil)
-        } else {
-                self.webViewUrl = pin.url
-                performSegue(withIdentifier: "showWebSegue", sender: self)
-//                UIApplication.shared.open(pin.url, options: [:], completionHandler: nil)
+            } else {
+            self.webViewUrl = pin.url
+            performSegue(withIdentifier: "showWebSegue", sender: self)
             }
+        // direct to Maps
+        } else if control.tag == 2 {
+            let location = view.annotation as! StorePin
+            let launchOptions = [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving]
+            location.mapItem().openInMaps(launchOptions: launchOptions)
         }
     }
 }

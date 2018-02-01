@@ -6,15 +6,16 @@
 //  Copyright © 2018 Timo den Hartog. All rights reserved.
 //
 
-import UIKit
-import yelp
+//import UIKit
+//import yelp
+//
+//class Store:  {
+//    let name: String?
+//    let adress: String?
+//    let imageURL: NSURL?
+//    let categories: String?
+//    let distance: String?
+//    let ratingImageURL: NSURL?
+//    let reviewCount: NSNumber?
+//}
 
-class Store:  {
-    let name: String?
-    let adress: String?
-    let imageURL: NSURL?
-    let categories: String?
-    let distance: String?
-    let ratingImageURL: NSURL?
-    let reviewCount: NSNumber?
-}

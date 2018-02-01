@@ -19,7 +19,7 @@ class StorePin: NSObject, MKAnnotation {
         city = business.location.city
         address = business.location.address.first!
         url = business.url
-        imageURL = business.imageURL!
+        imageURL = business.imageURL
     }
     
     func mapItem() -> MKMapItem {
@@ -27,7 +27,7 @@ class StorePin: NSObject, MKAnnotation {
         return MKMapItem(placemark: placeMark)
     }
     
-    var imageURL: URL
+    var imageURL: URL?
     var title: String?
     var city: String
     var address: String
