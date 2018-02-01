@@ -1,5 +1,4 @@
-# FinalProject
-# Record Store Explore
+# Final Project: Record Store Explore
 
 Timo den Hartog
 
