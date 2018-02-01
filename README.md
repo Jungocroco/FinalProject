@@ -40,7 +40,9 @@ There is no specifically similar app to what i propose. The app links to a brows
 
 ![Alt text](https://raw.githubusercontent.com/Jungocroco/FinalProject/master/doc/RecordStoreExplore.jpg)
 
+
 Screenshots:
+
 ![Alt text](https://raw.githubusercontent.com/Jungocroco/FinalProject/master/doc/SearchScreen.jpg)
 ![Alt text](https://raw.githubusercontent.com/Jungocroco/FinalProject/master/doc/EmptyTable.jpg)
 ![Alt text](https://raw.githubusercontent.com/Jungocroco/FinalProject/master/doc/FullTable.jpg)
