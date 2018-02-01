@@ -1,6 +1,7 @@
 - Start with a short description of your application (like in the README.md, but very short, including a single screen shot).
 
 Record Store Explore is all about finding, routing and visiting record stores in an area of choice. A combination of the Yelp and Maps API provided for an interface in which the user can search,select and discover stores in a fast and easy way.
+
 ![Alt text](https://raw.githubusercontent.com/Jungocroco/FinalProject/master/doc/IMG_5097.jpg)
 
 - Clearly describe the technical design: how is the functionality implemented in your code? This should be like your DESIGN.md but updated to reflect the final application. First, give a high level overview, which helps us navigate and understand the total of your code (which components are there?). Second, go into detail, and describe the modules/classes (apps) files/functions (data) and how they relate.
