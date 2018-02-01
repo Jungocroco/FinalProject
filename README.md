@@ -11,7 +11,7 @@ Record Store Explore
 
 Problem statement.
 
-For the lack of an app that combines record store locations and assortment, this is it. Record stores often don't care that much about their websites and focus on the physical stores. They mostly outsource their online sales to Discogs. To locate record stores and instantly discover their goods at the same time within one app makes for a more efficient digging session. As a result one can decide to visit the physical shop and route to it or to let it be.
+For the lack of an app that combines record store locations and assortment, this is it. Record stores often don't care that much about their websites and focus on the physical stores. To locate record stores and instantly route to their location or website at the same time within one app makes for a more efficient recorddigging session. As a result one can decide to visit the physical shop and route to it or make plans for a later visit and link to it's website.
 
 
 Solution.
@@ -20,8 +20,7 @@ The goal is to create an all-in-one record store finder.
 Main features:
 - Map with record stores shown
 - Yelp Guide with the default settings of record stores
-- Discogs assortment and prices per shop
-- (possibly) Price comparing
+- Routing to the store from current location via Maps
 
 
 Prerequisites.
@@ -29,17 +28,13 @@ Prerequisites.
 Data sources:
 - Yelp, https://www.yelp.nl/developers/documentation/v3/business_search
   - Data may have to be transformed before usable
-- Discogs, https://www.discogs.com/developers/#page:marketplace
-  - Data may have to be transformed before usable
+- MapKit
   
  Frameworks:
  - IOS MapKit
 
 Review of similar mobile apps:
-There is no specifically similar app to what i propose. The Marketplace section of the Discogs app links to a browser and is thereby not implemented in the app itself. The Yelp app only shows reviews and locations, no assortment or goods to be bought.
-
-Hardest part identification:
-The combination of these different API's into one map-centered application looks like the biggest struggle to overcome. Also, retrieving Discogs' data and presenting it in a user-friendly way can become a difficulty.
+There is no specifically similar app to what i propose. The app links to a browser or map and is thereby a newcomer in its sort. The Yelp app only shows reviews and locations, but no routing.
 
 [![BCH compliance](https://bettercodehub.com/edge/badge/Jungocroco/FinalProject?branch=master)](https://bettercodehub.com/)
 
