@@ -41,7 +41,7 @@ There is no specifically similar app to what i propose. The app links to a brows
 ![Alt text](https://raw.githubusercontent.com/Jungocroco/FinalProject/master/doc/RecordStoreExplore.jpg)
 
 # Product Demo
-https://www.youtube.com/edit?o=U&video_id=9PieRw1WbZg
+https://www.youtube.com/watch?v=9PieRw1WbZg
 
 # Screenshots:
 
